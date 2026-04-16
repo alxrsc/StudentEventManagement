@@ -15,7 +15,7 @@ public class Participant extends User {
 	}
 	
 	public void giveFeedback() {
-        System.out.println("Feedback-ul a fost trimis.");
+        System.out.println("Feedback sent.");
     }
 
 }

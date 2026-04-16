@@ -15,16 +15,17 @@ public class Organiser extends User {
 	}
 	
     public void createEvent() {
-        System.out.println("Se creează un eveniment nou...");
+    	System.out.println("Creating a new event...");
     }
 
     public Status approvePresentation(Event event, Presentation presentation) {
-        System.out.println("Se analizează prezentarea: " + presentation.getTitle());
+    	System.out.println("Reviewing presentation: " + presentation.getTitle());
         return Status.APPROVED;
     }
 
     public void giveAward(Participant participant, Presentation presentation) {
-        System.out.println("Premiu acordat lui " + participant.getName() + " pentru lucrarea " + presentation.getTitle());
+    	String fullName = participant.getName() + " " + participant.getSurname();
+        System.out.println("Award granted to " + fullName + " for the paper: " + presentation.getTitle());
     }
 
 }
