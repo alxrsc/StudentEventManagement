@@ -7,6 +7,15 @@ public abstract class User {
     protected String surname;
     protected String role;
     
+    public User() { } // Constructor implicit
+    
+    public User(String userName, String password, String name, String surname) {
+        this.userName = userName;
+        this.password = password;
+        this.name = name;
+        this.surname = surname;
+    }
+    
     public String getUserName() { return userName; }
     public String getName() { return name; }
     public String getSurname() { return surname; }

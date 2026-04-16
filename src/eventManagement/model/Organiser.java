@@ -2,6 +2,11 @@ package eventManagement.model;
 
 public class Organiser extends User {
 
+	public Organiser(String userName, String password, String name, String surname) {
+        super(userName, password, name, surname);
+        this.role = "ORGANISER";
+    }
+	
 	@Override
 	public void joinEvent() {
 		// TODO Auto-generated method stub

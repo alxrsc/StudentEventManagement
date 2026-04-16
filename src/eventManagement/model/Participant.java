@@ -2,10 +2,9 @@ package eventManagement.model;
 
 public class Participant extends User {
 
-	public Participant(String username, String password) {
-        this.userName = username;
-        this.password = password;
-        this.role = "Participant"; // Assign default rights here
+	public Participant(String userName, String password, String name, String surname) {
+        super(userName, password, name, surname);
+        this.role = "PARTICIPANT";
     }
 	
 	@Override
