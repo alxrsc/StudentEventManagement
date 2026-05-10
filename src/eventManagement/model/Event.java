@@ -10,12 +10,11 @@ public class Event {
     private Organiser organiser;
     private int maxNumberOfParticipants;
     private List<Feedback> feedbacks; // composition
-    private List<Participant> enrolledParticipants; // changed code
+    private List<Participant> enrolledParticipants; 
 
     public Event() {
-        // Inițializăm lista în constructor
         this.feedbacks = new ArrayList<>();
-        this.enrolledParticipants = new ArrayList<>(); // changed code
+        this.enrolledParticipants = new ArrayList<>(); 
     }
 
     public Event(String name, String location, Organiser organiser) {
@@ -23,7 +22,7 @@ public class Event {
         this.name = name;
         this.location = location;
         this.organiser = organiser;
-        this.maxNumberOfParticipants = 0; // Default or can be set letter via setMaxNumberOfParticipants
+        this.maxNumberOfParticipants = 0;
     }
     
     public void setMaxNumberOfParticipants(int maxNumberOfParticipants) {
@@ -55,9 +54,8 @@ public class Event {
     }
 
     // add feedback, used for composition
-    public void addFeedback(int stars, String description) {
-        Feedback newFeedback = new Feedback(stars, description);
-        this.feedbacks.add(newFeedback);
+    public void addFeedback(Feedback feedback) {
+        this.feedbacks.add(feedback);
     }
     
     public int getFeedbackCount() {

@@ -11,12 +11,15 @@ public class Participant extends User {
     }
 	
 	@Override
-	public void joinEvent() {
-		System.out.println("Participant " + this.getName() + " joined an event as attendee.");
-		// For demonstration, add a dummy event to the calendar
-		Event event = new Event("Participant's Event", "Room 101", null);
-		calendar.add(event);
-		System.out.println("Event '" + event.getName() + "' added to participant's calendar.");
+	public void joinEvent(Event newEvent) {
+		if ( isAuthenticated() ) {
+			System.out.println("Participant " + this.getName() + " joined an event as attendee.");
+			calendar.add(newEvent);
+			System.out.println("Event '" + newEvent.getName() + "' added to participant's calendar.");
+		}
+		else {
+			System.out.println("Error: Participant must be logged in to join an event.");
+		}
 	}
 
 	@Override
@@ -35,8 +38,16 @@ public class Participant extends User {
         calendar.add(event);
     }
 	
-	public void giveFeedback() {
-        System.out.println("Feedback sent.");
+	@Override
+	public void addPresentation(Presentation presentation) {
+		System.out.println("Presentation '" + presentation.getTitle() + "' added to participant's calendar.");
+	}
+	
+	public Feedback giveFeedback(Event event) {
+		Feedback feedback = new Feedback(5, "Great event!"); 
+		event.addFeedback(feedback);
+        System.out.println("Feedback sent for event " + event.getName() + ": " + feedback.getStars() + " stars, " + feedback.getDescription());
+        return feedback;
     }
 
 }

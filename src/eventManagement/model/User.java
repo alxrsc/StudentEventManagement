@@ -6,9 +6,9 @@ public abstract class User {
     protected String name;
     protected String surname;
     protected String role;
-    protected boolean authenticated = false; // changed code
+    protected boolean authenticated = false;
     
-    public User() { } // Constructor implicit
+    public User() { } // implicit constructor
     
     public User(String userName, String password, String name, String surname) {
         this.userName = userName;
@@ -28,34 +28,36 @@ public abstract class User {
     public void setName(String name) { this.name = name; }
     public void setSurname(String surname) { this.surname = surname; }
 
-    // Password validation
+    // password validation
     public boolean verifyPassword(String input) {
         return this.password.equals(input);
     }
 
-public boolean login(String enteredUsername, String enteredPassword) {
-    if (!this.userName.equals(enteredUsername)) {
-        System.out.println("Error: Username '" + enteredUsername + "' not found.");
-        this.authenticated = false;
-        return false;
-    }
+    public boolean login(String enteredUsername, String enteredPassword) {
+    	if (!this.userName.equals(enteredUsername)) {
+    		System.out.println("Error: Username '" + enteredUsername + "' not found.");
+    		this.authenticated = false;
+    		return false;
+    	}
 
-    if (!this.password.equals(enteredPassword)) {
-        System.out.println("Error: Incorrect password for user " + enteredUsername + ".");
-        this.authenticated = false;
-        return false;
-    }
+    	if (!verifyPassword(enteredPassword)) {
+    		System.out.println("Error: Incorrect password for user " + enteredUsername + ".");
+    		this.authenticated = false;
+    		return false;
+    	}
 
-    System.out.println("Login successful! Welcome, " + this.name + " " + this.surname + ".");
-    this.authenticated = true;
-    return true;
-}
+    	System.out.println("Login successful! Welcome, " + this.name + " " + this.surname + ".");
+    	this.authenticated = true;
+    	return true;
+    }
 
     public void logout() {
         this.authenticated = false;
     }
 
-    public abstract void joinEvent();
+    public abstract void addPresentation(Presentation presentation);
+    
+    public abstract void joinEvent(Event newEvent);
     
     public abstract void viewCalendar();
 }
