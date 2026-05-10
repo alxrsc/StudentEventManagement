@@ -35,6 +35,10 @@ public class Participant extends User {
         calendar.add(event);
     }
 	
+	public void addPresentation(Presentation presentation) {
+		System.out.println("Presentation '" + presentation.getTitle() + "' added to participant's calendar.");
+	}
+	
 	public void giveFeedback() {
         System.out.println("Feedback sent.");
     }

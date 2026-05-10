@@ -13,7 +13,6 @@ public class Organiser extends User {
 	@Override
 	public void joinEvent() {
     System.out.println("Organiser " + this.getName() + " joined an event as host.");
-    // For demonstration, add a dummy event to the calendar
     Event event = new Event("Organiser's Event", "Main Hall", this);
     calendar.add(event);
     System.out.println("Event '" + event.getName() + "' added to organiser's calendar.");
