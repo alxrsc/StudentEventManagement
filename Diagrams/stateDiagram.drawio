@@ -1,0 +1,114 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="kSiFAOq0WYiIsFj6gw6U">
+    <mxGraphModel dx="774" dy="531" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="UznmwsWii8uhUDrDp0JU-1" parent="1" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#ff0000;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="340" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="UznmwsWii8uhUDrDp0JU-2" edge="1" parent="1" source="UznmwsWii8uhUDrDp0JU-1" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;rounded=0;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="355" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UznmwsWii8uhUDrDp0JU-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" value="Prezentare Creata" vertex="1">
+          <mxGeometry height="40" width="120" x="295" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="UznmwsWii8uhUDrDp0JU-4" edge="1" parent="1" source="UznmwsWii8uhUDrDp0JU-3" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;rounded=0;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="355" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UznmwsWii8uhUDrDp0JU-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" value="Prezentare Incarcata" vertex="1">
+          <mxGeometry height="40" width="120" x="294" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="UznmwsWii8uhUDrDp0JU-7" edge="1" parent="1" source="UznmwsWii8uhUDrDp0JU-6" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;rounded=0;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="354" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UznmwsWii8uhUDrDp0JU-8" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeLast=1;container=0;fontColor=#000000;collapsible=0;rounded=1;arcSize=30;strokeColor=#ff0000;fillColor=#ffffc0;swimlaneFillColor=#ffffc0;dropTarget=0;" value="Prezentare in Lista" vertex="1">
+          <mxGeometry height="60" width="160" x="275" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="UznmwsWii8uhUDrDp0JU-9" parent="UznmwsWii8uhUDrDp0JU-8" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;fontColor=#000000;" value="entry / adauga in lista de prezentari" vertex="1">
+          <mxGeometry height="30" width="160" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="UznmwsWii8uhUDrDp0JU-10" edge="1" parent="1" source="UznmwsWii8uhUDrDp0JU-8" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;rounded=0;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="355" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UznmwsWii8uhUDrDp0JU-11" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeLast=1;container=0;fontColor=#000000;collapsible=0;rounded=1;arcSize=30;strokeColor=#ff0000;fillColor=#ffffc0;swimlaneFillColor=#ffffc0;dropTarget=0;" value="In Evaluare" vertex="1">
+          <mxGeometry height="60" width="230" x="239" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="UznmwsWii8uhUDrDp0JU-12" parent="UznmwsWii8uhUDrDp0JU-11" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;fontColor=#000000;" value="do / analizeaza&amp;nbsp; prezentarea&lt;div&gt;exit / salveaza status prezentare&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="230" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="UznmwsWii8uhUDrDp0JU-13" edge="1" parent="1" source="UznmwsWii8uhUDrDp0JU-11" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;rounded=0;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="320" y="560" />
+              <mxPoint x="240" y="560" />
+            </Array>
+            <mxPoint x="240" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UznmwsWii8uhUDrDp0JU-15" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;rounded=0;" value="">
+          <mxGeometry relative="1" x="-1" as="geometry">
+            <Array as="points">
+              <mxPoint x="400" y="560" />
+              <mxPoint x="480" y="560" />
+              <mxPoint x="480" y="600" />
+            </Array>
+            <mxPoint x="400" y="500" as="sourcePoint" />
+            <mxPoint x="480" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UznmwsWii8uhUDrDp0JU-17" parent="1" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="345" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="UznmwsWii8uhUDrDp0JU-18" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Diagrama de stare&lt;br&gt;Evaluare Prezentare" vertex="1">
+          <mxGeometry height="30" width="140" x="170" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="UznmwsWii8uhUDrDp0JU-19" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&amp;nbsp;Acceptata" vertex="1">
+          <mxGeometry height="30" width="60" x="260" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="UznmwsWii8uhUDrDp0JU-20" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&amp;nbsp;Respinsa" vertex="1">
+          <mxGeometry height="30" width="60" x="400" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="UznmwsWii8uhUDrDp0JU-21" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeLast=1;container=0;fontColor=#000000;collapsible=0;rounded=1;arcSize=30;strokeColor=#ff0000;fillColor=#ffffc0;swimlaneFillColor=#ffffc0;dropTarget=0;" value="Prezentare Aprobata" vertex="1">
+          <mxGeometry height="70" width="220" x="140" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="UznmwsWii8uhUDrDp0JU-22" parent="UznmwsWii8uhUDrDp0JU-21" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;fontColor=#000000;" value="entry / trimite email aprobare&lt;div&gt;do / genereaza diploma&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="220" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="UznmwsWii8uhUDrDp0JU-23" edge="1" parent="1" source="UznmwsWii8uhUDrDp0JU-21" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" target="UznmwsWii8uhUDrDp0JU-17" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="250" y="690" />
+              <mxPoint x="349" y="690" />
+            </Array>
+            <mxPoint x="240" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UznmwsWii8uhUDrDp0JU-24" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeLast=1;container=0;fontColor=#000000;collapsible=0;rounded=1;arcSize=30;strokeColor=#ff0000;fillColor=#ffffc0;swimlaneFillColor=#ffffc0;dropTarget=0;" value="Prezentare Respinsa" vertex="1">
+          <mxGeometry height="60" width="160" x="400" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="UznmwsWii8uhUDrDp0JU-25" parent="UznmwsWii8uhUDrDp0JU-24" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;fontColor=#000000;" value="entry / trimite email respingere" vertex="1">
+          <mxGeometry height="30" width="160" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="UznmwsWii8uhUDrDp0JU-26" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" target="UznmwsWii8uhUDrDp0JU-17" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="470" y="690" />
+              <mxPoint x="371" y="690" />
+            </Array>
+            <mxPoint x="470" y="660" as="sourcePoint" />
+            <mxPoint x="370" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
