@@ -44,7 +44,7 @@ public class Organiser extends User {
         Event event = new Event("Organiser's Event", "Main Hall", this);
         joinEvent(event); // join the event as the host
         addEventToCalendar(event); // add the event to the calendar
-        return new Event("Organiser's Event", "Main Hall", this);
+        return event;
     }
 
     @Override
@@ -55,8 +55,24 @@ public class Organiser extends User {
 
     
     public Status approvePresentation(Event event, Presentation presentation) {
-    	System.out.println("Reviewing presentation: " + presentation.getTitle());
+        System.out.println("Reviewing presentation: " + presentation.getTitle());
+        
+        presentation.setStatus(Status.APPROVED);
+        
+        presentation.notifyAuthor("Your presentation has been approved!");
+        
+        presentation.generateDiploma();
+        
         return Status.APPROVED;
+    }
+    
+    public Status rejectPresentation(Event event, Presentation presentation) {
+        System.out.println("Reviewing presentation: " + presentation.getTitle());
+        
+        presentation.setStatus(Status.REJECTED);
+        presentation.notifyAuthor("Your presentation has been rejected.");
+        
+        return Status.REJECTED;
     }
 
     public void giveAward(Participant participant, Presentation presentation) {
