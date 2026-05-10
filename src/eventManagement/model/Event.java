@@ -13,7 +13,6 @@ public class Event {
     private List<Participant> enrolledParticipants; 
 
     public Event() {
-        // Inițializăm lista în constructor
         this.feedbacks = new ArrayList<>();
         this.enrolledParticipants = new ArrayList<>(); 
     }
@@ -55,9 +54,8 @@ public class Event {
     }
 
     // add feedback, used for composition
-    public void addFeedback(int stars, String description) {
-        Feedback newFeedback = new Feedback(stars, description);
-        this.feedbacks.add(newFeedback);
+    public void addFeedback(Feedback feedback) {
+        this.feedbacks.add(feedback);
     }
     
     public int getFeedbackCount() {

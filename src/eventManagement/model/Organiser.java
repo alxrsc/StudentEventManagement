@@ -11,33 +11,49 @@ public class Organiser extends User {
     }
 	
 	@Override
-	public void joinEvent() {
-    System.out.println("Organiser " + this.getName() + " joined an event as host.");
-    Event event = new Event("Organiser's Event", "Main Hall", this);
-    calendar.add(event);
-    System.out.println("Event '" + event.getName() + "' added to organiser's calendar.");
+	public void joinEvent(Event newEvent) {
+		if( isAuthenticated() ) {
+			System.out.println("Organiser " + this.getName() + " joined an event as host.");
+		    Event event =  newEvent;// Create a new event and join it
+		    calendar.add(event);
+		    System.out.println("Event '" + event.getName() + "' added to organiser's calendar.");
+		}
+		else {
+			System.out.println("Error: Organiser must be logged in to join an event.");
+		}
 	}
 
 	@Override
 	public void viewCalendar() {
-    System.out.println("Organiser " + this.getName() + " is viewing their event calendar.");
-    if (calendar.isEmpty()) {
-      System.out.println("No events in calendar.");
-    } else {
-      for (Event e : calendar) {
-        System.out.println("- " + e.getName() + " at " + e.getLocation());
-      }
-    }
-  }
+		System.out.println("Organiser " + this.getName() + " is viewing their event calendar.");
+		if (calendar.isEmpty()) {
+			System.out.println("No events in calendar.");
+		} else {
+			for (Event e : calendar) {
+				System.out.println("- " + e.getName() + " at " + e.getLocation());
+			}
+		}
+	}
 
-  public void addEventToCalendar(Event event) {
+	public void addEventToCalendar(Event event) {
         calendar.add(event);
     }
 
-    public void createEvent() {
+    public Event createEvent() {
         System.out.println("Creating a new event...");
+        Event event = new Event("Organiser's Event", "Main Hall", this);
+        joinEvent(event); // join the event as the host
+        addEventToCalendar(event); // add the event to the calendar
+        return new Event("Organiser's Event", "Main Hall", this);
     }
 
+    @Override
+    public void addPresentation(Presentation presentation) {
+		System.out.println("Presentation '" + presentation.getTitle() + "' added to participant's calendar.");
+		approvePresentation(null, presentation); // approve presentation by default for organizer
+	}
+
+    
     public Status approvePresentation(Event event, Presentation presentation) {
     	System.out.println("Reviewing presentation: " + presentation.getTitle());
         return Status.APPROVED;
@@ -46,6 +62,7 @@ public class Organiser extends User {
     public void giveAward(Participant participant, Presentation presentation) {
     	String fullName = participant.getName() + " " + participant.getSurname();
         System.out.println("Award granted to " + fullName + " for the paper: " + presentation.getTitle());
+        presentation.generateDiploma();
     }
 
 }

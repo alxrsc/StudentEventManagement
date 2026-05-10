@@ -7,7 +7,7 @@ public class Presentation {
     private Status status; 
     
     public Presentation() {
-		// Default constructor
+		// default constructor
 	}
 
     public Presentation(String title, String author) {
@@ -26,12 +26,12 @@ public class Presentation {
         this.status = status;
     }
 
-    // Method to notify the author about the status
+    // method to notify the author about the status
     public String notifyAuthor(String message) {
         return "Notification sent: " + message;
     }
 
-    // Method to generate a diploma for the presentation
+    // method to generate a diploma for the presentation
     public String generateDiploma() {
         return "Diploma generated for presentation: " + title;
     }
