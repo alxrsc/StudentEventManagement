@@ -10,10 +10,12 @@ public class Event {
     private Organiser organiser;
     private int maxNumberOfParticipants;
     private List<Feedback> feedbacks; // composition
+    private List<Participant> enrolledParticipants; // changed code
 
     public Event() {
         // Inițializăm lista în constructor
         this.feedbacks = new ArrayList<>();
+        this.enrolledParticipants = new ArrayList<>(); // changed code
     }
 
     public Event(String name, String location, Organiser organiser) {
@@ -21,6 +23,35 @@ public class Event {
         this.name = name;
         this.location = location;
         this.organiser = organiser;
+        this.maxNumberOfParticipants = 0; // Default or can be set letter via setMaxNumberOfParticipants
+    }
+    
+    public void setMaxNumberOfParticipants(int maxNumberOfParticipants) {
+        this.maxNumberOfParticipants = maxNumberOfParticipants;
+    }
+    
+    public int getMaxNumberOfParticipants() {
+        return maxNumberOfParticipants;
+    }
+    
+    public List<Participant> getEnrolledParticipants() {
+        return enrolledParticipants;
+    }
+
+    public void enrollParticipant(Participant p) throws Exception {
+        if (!p.isAuthenticated()) {
+            throw new Exception("Authentication required. Please login first.");
+        }
+        if (enrolledParticipants.contains(p)) {
+            throw new Exception("Participant already enrolled.");
+        }
+        if (enrolledParticipants.size() >= maxNumberOfParticipants && maxNumberOfParticipants > 0) {
+            throw new Exception("No available slots for this event.");
+        }
+        
+        enrolledParticipants.add(p);
+        p.addEventToCalendar(this);
+        System.out.println("Participant " + p.getName() + " successfully enrolled in " + this.name);
     }
 
     // add feedback, used for composition
@@ -34,6 +65,7 @@ public class Event {
     }
 
     public String getName() { return name; }
+    public String getLocation() { return location; }
 
     public void joinEvent(Category category) {
     	System.out.println("User registered as: " + category);
