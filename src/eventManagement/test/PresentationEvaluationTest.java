@@ -1,5 +1,6 @@
 package eventManagement.test;
 
+import eventManagement.model.Organiser;
 import eventManagement.model.Presentation;
 import eventManagement.model.Status;
 import org.junit.jupiter.api.Test;
@@ -14,26 +15,31 @@ class PresentationEvaluationTest {
 
     @Test
     void testApprovePresentation() {
-        Presentation presentation = new Presentation();
-        presentation.setStatus(Status.PENDING);
-        presentation.setStatus(Status.APPROVED);
+        Organiser organiser = new Organiser("admin", "123", "Ion", "Popescu");
+        Presentation presentation = new Presentation("UML Study", "Student1");
+        
+        organiser.approvePresentation(null, presentation);
+        
+        assertEquals(Status.APPROVED, presentation.getStatus(), "Status should be updated by the organiser.");
+        
         String notification = presentation.notifyAuthor("approved");
-        String diploma = presentation.generateDiploma();
-        assertEquals(Status.APPROVED, presentation.getStatus());
         assertEquals("Notification sent: approved", notification);
-        assertNotNull(diploma);
+        
+        assertNotNull(presentation.generateDiploma(), "Diploma should be generated after approval.");
     }
 
     @Test
     void testRejectPresentation() {
-        Presentation presentation = new Presentation();
-        presentation.setStatus(Status.PENDING);
-        presentation.setStatus(Status.REJECTED);
+        Organiser organiser = new Organiser("admin", "123", "Ion", "Popescu");
+        Presentation presentation = new Presentation("UML Study", "Student1");
+        
+        organiser.rejectPresentation(null, presentation);
+        
+        assertEquals(Status.REJECTED, presentation.getStatus(), "Status should be updated to REJECTED.");
+        
         String notification = presentation.notifyAuthor("rejected");
-        assertEquals(Status.REJECTED, presentation.getStatus());
         assertEquals("Notification sent: rejected", notification);
     }
-
     @Test
     void testEmptyPresentationList() {
         assertTrue(presentationList.isEmpty(), "The presentation list should be empty.");
